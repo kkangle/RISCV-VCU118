@@ -1,2 +1,2 @@
 # RISCV-VCU118
-A synthesizeable version of RISCV on VCU118
+A synthesizable version of RISCV on VCU118
