@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xczu9eg-ffvb1156-2-i-es2" LaunchTime="1533229032">
+  <File Type="VDS-TIMING-PB" Name="U500VCU118DevKitFPGAChip_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="U500VCU118DevKitFPGAChip_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="U500VCU118DevKitFPGAChip.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="U500VCU118DevKitFPGAChip_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="U500VCU118DevKitFPGAChip_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="U500VCU118DevKitFPGAChip_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="U500VCU118DevKitFPGAChip.vds"/>
+  <File Type="PA-TCL" Name="U500VCU118DevKitFPGAChip.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../code/freedom/fpga-shells/xilinx/vcu118/vsrc/vcu118reset.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../code/freedom/fpga-shells/xilinx/vcu118/vsrc/sdio.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../code/freedom/fpga-shells/xilinx/common/vsrc/PowerOnResetFPGAOnly.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../code/freedom/rocket-chip/src/main/resources/vsrc/AsyncResetReg.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../code/freedom/rocket-chip/src/main/resources/vsrc/plusarg_reader.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../code/freedom/builds/u500vcu118devkit/sifive.freedom.unleashed.u500vcu118devkit.U500VCU118DevKitConfig.rom.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../code/freedom/builds/u500vcu118devkit/sifive.freedom.unleashed.u500vcu118devkit.U500VCU118DevKitConfig.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../code/freedom/rocket-chip/src/main/resources/vsrc/ClockDivider2.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../code/freedom/rocket-chip/src/main/resources/vsrc/ClockDivider3.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="U500VCU118DevKitFPGAChip"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="ddr4_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+</GenRun>

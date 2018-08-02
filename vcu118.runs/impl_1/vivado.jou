@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Thu Aug  2 12:06:09 2018
+# Process ID: 27830
+# Current directory: /home/yang/vcu118/vcu118.runs/impl_1
+# Command line: vivado -log U500VCU118DevKitFPGAChip.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source U500VCU118DevKitFPGAChip.tcl -notrace
+# Log file: /home/yang/vcu118/vcu118.runs/impl_1/U500VCU118DevKitFPGAChip.vdi
+# Journal file: /home/yang/vcu118/vcu118.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source U500VCU118DevKitFPGAChip.tcl -notrace

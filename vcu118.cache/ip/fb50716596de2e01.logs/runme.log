@@ -1,0 +1,64 @@
+
+*** Running vivado
+    with args -log reset_sys.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source reset_sys.tcl
+
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+
+****** Vivado v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source reset_sys.tcl -notrace
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1341.273 ; gain = 403.902 ; free physical = 4385 ; free virtual = 60005
+INFO: [Synth 8-638] synthesizing module 'reset_sys' [/home/yang/vcu118/vcu118.srcs/sources_1/ip/reset_sys/synth/reset_sys.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'proc_sys_reset' [/home/yang/vcu118/vcu118.srcs/sources_1/ip/reset_sys/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
+INFO: [Synth 8-638] synthesizing module 'lpf' [/home/yang/vcu118/vcu118.srcs/sources_1/ip/reset_sys/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
+INFO: [Synth 8-638] synthesizing module 'SRL16' [/home/yang/Application/Vivado/2016.4/scripts/rt/data/unisim_comp.v:43312]
+INFO: [Synth 8-256] done synthesizing module 'SRL16' (1#1) [/home/yang/Application/Vivado/2016.4/scripts/rt/data/unisim_comp.v:43312]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [/home/yang/vcu118/vcu118.srcs/sources_1/ip/reset_sys/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (2#1) [/home/yang/vcu118/vcu118.srcs/sources_1/ip/reset_sys/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (3#1) [/home/yang/vcu118/vcu118.srcs/sources_1/ip/reset_sys/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
+INFO: [Synth 8-638] synthesizing module 'sequence_psr' [/home/yang/vcu118/vcu118.srcs/sources_1/ip/reset_sys/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
+INFO: [Synth 8-638] synthesizing module 'upcnt_n' [/home/yang/vcu118/vcu118.srcs/sources_1/ip/reset_sys/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (4#1) [/home/yang/vcu118/vcu118.srcs/sources_1/ip/reset_sys/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
+INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (5#1) [/home/yang/vcu118/vcu118.srcs/sources_1/ip/reset_sys/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (6#1) [/home/yang/vcu118/vcu118.srcs/sources_1/ip/reset_sys/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
+INFO: [Synth 8-256] done synthesizing module 'reset_sys' (7#1) [/home/yang/vcu118/vcu118.srcs/sources_1/ip/reset_sys/synth/reset_sys.vhd:71]
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1382.742 ; gain = 445.371 ; free physical = 4342 ; free virtual = 59962
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1382.742 ; gain = 445.371 ; free physical = 4342 ; free virtual = 59962
+INFO: [Device 21-403] Loading part xcvu9p-flga2104-2L-e-es1
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2325.242 ; gain = 0.000 ; free physical = 3560 ; free virtual = 59179
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2325.242 ; gain = 1387.871 ; free physical = 3559 ; free virtual = 59179
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2325.242 ; gain = 1387.871 ; free physical = 3559 ; free virtual = 59179
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2325.242 ; gain = 1387.871 ; free physical = 3559 ; free virtual = 59179
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2325.242 ; gain = 1387.871 ; free physical = 3552 ; free virtual = 59172
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2325.242 ; gain = 1387.871 ; free physical = 3551 ; free virtual = 59171
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 2545.336 ; gain = 1607.965 ; free physical = 3208 ; free virtual = 58829
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 2545.336 ; gain = 1607.965 ; free physical = 3208 ; free virtual = 58829
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.375 ; gain = 1628.004 ; free physical = 3190 ; free virtual = 58811
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.375 ; gain = 1628.004 ; free physical = 3190 ; free virtual = 58811
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.375 ; gain = 1628.004 ; free physical = 3190 ; free virtual = 58811
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.375 ; gain = 1628.004 ; free physical = 3190 ; free virtual = 58811
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.375 ; gain = 1628.004 ; free physical = 3190 ; free virtual = 58811
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.375 ; gain = 1628.004 ; free physical = 3190 ; free virtual = 58810
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.375 ; gain = 1628.004 ; free physical = 3190 ; free virtual = 58810
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |LUT1  |     5|
+|2     |LUT2  |     9|
+|3     |LUT3  |     1|
+|4     |LUT4  |     6|
+|5     |LUT5  |     3|
+|6     |LUT6  |     1|
+|7     |SRL16 |     1|
+|8     |FDR   |     8|
+|9     |FDRE  |    28|
+|10    |FDSE  |     4|
++------+------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.375 ; gain = 1628.004 ; free physical = 3190 ; free virtual = 58810
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 2698.336 ; gain = 1480.492 ; free physical = 3088 ; free virtual = 58709

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="ddr4_0_synth_1" LaunchPart="xczu9eg-ffvb1156-2-i-es2" LaunchTime="1533229032">
+  <File Type="VDS-TIMING-PB" Name="ddr4_0_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="ddr4_0_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="ddr4_0.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="ddr4_0_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="ddr4_0_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="ddr4_0_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="ddr4_0.vds"/>
+  <File Type="PA-TCL" Name="ddr4_0.tcl"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ddr4_0">
+    <File Path="$PSRCDIR/sources_1/ip/ddr4_0/ddr4_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="ddr4_0"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ddr4_0">
+    <File Path="$PSRCDIR/sources_1/ip/ddr4_0/ddr4_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="ddr4_0"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
