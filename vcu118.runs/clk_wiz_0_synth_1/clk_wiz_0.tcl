@@ -4,10 +4,10 @@
 
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
-set_msg_config  -ruleid {3}  -id {[BD 41-1306]}  -suppress 
-set_msg_config  -ruleid {4}  -id {[BD 41-1271]}  -suppress 
+set_msg_config  -ruleid {1}  -id {[BD 41-1306]}  -suppress 
+set_msg_config  -ruleid {2}  -id {[BD 41-1271]}  -suppress 
 set_msg_config -msgmgr_mode ooc_run
-create_project -in_memory -part xczu9eg-ffvb1156-2-i-es2
+create_project -in_memory -part xcvu9p-flga2104-2L-e-es1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -18,7 +18,7 @@ set_property parent.project_path /home/yang/vcu118/vcu118.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part xilinx.com:zcu102:part0:2.0 [current_project]
+set_property board_part xilinx.com:vcu118:part0:1.0 [current_project]
 set_property ip_output_repo /home/yang/vcu118/vcu118.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_ip -quiet /home/yang/vcu118/vcu118.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
@@ -34,7 +34,7 @@ set cached_ip [config_ip_cache -export -no_bom -use_project_ipc -dir /home/yang/
 
 if { $cached_ip eq {} } {
 
-synth_design -top clk_wiz_0 -part xczu9eg-ffvb1156-2-i-es2 -mode out_of_context
+synth_design -top clk_wiz_0 -part xcvu9p-flga2104-2L-e-es1 -mode out_of_context
 
 #---------------------------------------------------------
 # Generate Checkpoint/Stub/Simulation Files For IP Cache

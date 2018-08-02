@@ -4,9 +4,9 @@
 
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
-set_msg_config  -ruleid {3}  -id {[BD 41-1306]}  -suppress 
-set_msg_config  -ruleid {4}  -id {[BD 41-1271]}  -suppress 
-create_project -in_memory -part xczu9eg-ffvb1156-2-i-es2
+set_msg_config  -ruleid {1}  -id {[BD 41-1306]}  -suppress 
+set_msg_config  -ruleid {2}  -id {[BD 41-1271]}  -suppress 
+create_project -in_memory -part xcvu9p-flga2104-2L-e-es1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -16,29 +16,32 @@ set_property parent.project_path /home/yang/vcu118/vcu118.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part xilinx.com:zcu102:part0:2.0 [current_project]
+set_property board_part xilinx.com:vcu118:part0:1.0 [current_project]
 set_property ip_output_repo /home/yang/vcu118/vcu118.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 add_files -quiet /home/yang/vcu118/vcu118.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.dcp
 set_property used_in_implementation false [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.dcp]
 add_files -quiet /home/yang/vcu118/vcu118.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.dcp
 set_property used_in_implementation false [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.dcp]
-add_files -quiet /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/ddr4_0.dcp
-set_property used_in_implementation false [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/ddr4_0.dcp]
+add_files -quiet /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/vcu118mig.dcp
+set_property used_in_implementation false [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/vcu118mig.dcp]
 read_verilog -library xil_defaultlib {
-  /home/yang/code/freedom/fpga-shells/xilinx/vcu118/vsrc/vcu118reset.v
-  /home/yang/code/freedom/fpga-shells/xilinx/vcu118/vsrc/sdio.v
-  /home/yang/code/freedom/fpga-shells/xilinx/common/vsrc/PowerOnResetFPGAOnly.v
-  /home/yang/code/freedom/rocket-chip/src/main/resources/vsrc/AsyncResetReg.v
-  /home/yang/code/freedom/rocket-chip/src/main/resources/vsrc/plusarg_reader.v
-  /home/yang/code/freedom/builds/u500vcu118devkit/sifive.freedom.unleashed.u500vcu118devkit.U500VCU118DevKitConfig.rom.v
-  /home/yang/code/freedom/builds/u500vcu118devkit/sifive.freedom.unleashed.u500vcu118devkit.U500VCU118DevKitConfig.v
+  /home/yang/vcu118/vcu118.srcs/sources_1/imports/freedom/fpga-shells/xilinx/vcu118/vsrc/vcu118reset.v
+  /home/yang/vcu118/vcu118.srcs/sources_1/imports/freedom/fpga-shells/xilinx/vcu118/vsrc/sdio.v
+  /home/yang/vcu118/vcu118.srcs/sources_1/imports/freedom/fpga-shells/xilinx/common/vsrc/PowerOnResetFPGAOnly.v
+  /home/yang/vcu118/vcu118.srcs/sources_1/imports/freedom/rocket-chip/src/main/resources/vsrc/AsyncResetReg.v
+  /home/yang/vcu118/vcu118.srcs/sources_1/imports/freedom/rocket-chip/src/main/resources/vsrc/plusarg_reader.v
+  /home/yang/vcu118/vcu118.srcs/sources_1/imports/freedom/builds/u500vcu118devkit/sifive.freedom.unleashed.u500vcu118devkit.U500VCU118DevKitConfig.rom.v
+  /home/yang/vcu118/vcu118.srcs/sources_1/imports/freedom/builds/u500vcu118devkit/sifive.freedom.unleashed.u500vcu118devkit.U500VCU118DevKitConfig.v
 }
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp
 }
+read_xdc /home/yang/code/freedom/fpga-shells/xilinx/vcu118/constraints/vcu118-master.xdc
+set_property used_in_implementation false [get_files /home/yang/code/freedom/fpga-shells/xilinx/vcu118/constraints/vcu118-master.xdc]
 
-synth_design -top U500VCU118DevKitFPGAChip -part xczu9eg-ffvb1156-2-i-es2
+
+synth_design -top U500VCU118DevKitFPGAChip -part xcvu9p-flga2104-2L-e-es1
 
 
 write_checkpoint -force -noxdef U500VCU118DevKitFPGAChip.dcp

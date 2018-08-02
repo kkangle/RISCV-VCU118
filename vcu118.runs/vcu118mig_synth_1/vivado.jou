@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Thu Aug  2 16:18:14 2018
+# Process ID: 645
+# Current directory: /home/yang/vcu118/vcu118.runs/vcu118mig_synth_1
+# Command line: vivado -log vcu118mig.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vcu118mig.tcl
+# Log file: /home/yang/vcu118/vcu118.runs/vcu118mig_synth_1/vcu118mig.vds
+# Journal file: /home/yang/vcu118/vcu118.runs/vcu118mig_synth_1/vivado.jou
+#-----------------------------------------------------------
+source vcu118mig.tcl -notrace

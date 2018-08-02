@@ -44,15 +44,15 @@ proc step_failed { step } {
 
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
-set_msg_config  -ruleid {3}  -id {[BD 41-1306]}  -suppress 
-set_msg_config  -ruleid {4}  -id {[BD 41-1271]}  -suppress 
+set_msg_config  -ruleid {1}  -id {[BD 41-1306]}  -suppress 
+set_msg_config  -ruleid {2}  -id {[BD 41-1271]}  -suppress 
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  create_project -in_memory -part xczu9eg-ffvb1156-2-i-es2
-  set_property board_part xilinx.com:zcu102:part0:2.0 [current_project]
+  create_project -in_memory -part xcvu9p-flga2104-2L-e-es1
+  set_property board_part xilinx.com:vcu118:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir /home/yang/vcu118/vcu118.cache/wt [current_project]
@@ -65,13 +65,13 @@ set rc [catch {
   set_property netlist_only true [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.dcp]
   add_files -quiet /home/yang/vcu118/vcu118.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.dcp
   set_property netlist_only true [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.dcp]
-  add_files -quiet /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/ddr4_0.dcp
-  set_property netlist_only true [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/ddr4_0.dcp]
-  add_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/bd_0/bd_9054.bmm
-  set_property SCOPED_TO_REF bd_9054 [get_files -all /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/bd_0/bd_9054.bmm]
-  add_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/sw/calibration_0/Debug/calibration_ddr.elf
-  set_property SCOPED_TO_REF ddr4_0 [get_files -all /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/sw/calibration_0/Debug/calibration_ddr.elf]
-  set_property SCOPED_TO_CELLS inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I [get_files -all /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/sw/calibration_0/Debug/calibration_ddr.elf]
+  add_files -quiet /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/vcu118mig.dcp
+  set_property netlist_only true [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/vcu118mig.dcp]
+  add_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/bd_0/bd_28a7.bmm
+  set_property SCOPED_TO_REF bd_28a7 [get_files -all /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/bd_0/bd_28a7.bmm]
+  add_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/sw/calibration_0/Debug/calibration_ddr.elf
+  set_property SCOPED_TO_REF vcu118mig [get_files -all /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/sw/calibration_0/Debug/calibration_ddr.elf]
+  set_property SCOPED_TO_CELLS inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I [get_files -all /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/sw/calibration_0/Debug/calibration_ddr.elf]
   read_xdc -mode out_of_context -ref clk_wiz_0 -cells inst /home/yang/vcu118/vcu118.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_ooc.xdc
   set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_ooc.xdc]
   read_xdc -prop_thru_buffers -ref clk_wiz_0 -cells inst /home/yang/vcu118/vcu118.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_board.xdc
@@ -84,25 +84,26 @@ set rc [catch {
   set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1_board.xdc]
   read_xdc -ref clk_wiz_1 -cells inst /home/yang/vcu118/vcu118.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xdc
   set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xdc]
-  read_xdc -ref bd_9054_microblaze_I_0 -cells U0 /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/bd_0/ip/ip_0/bd_9054_microblaze_I_0.xdc
-  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/bd_0/ip/ip_0/bd_9054_microblaze_I_0.xdc]
-  read_xdc -prop_thru_buffers -ref bd_9054_rst_0_0 -cells U0 /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/bd_0/ip/ip_1/bd_9054_rst_0_0_board.xdc
-  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/bd_0/ip/ip_1/bd_9054_rst_0_0_board.xdc]
-  read_xdc -ref bd_9054_rst_0_0 -cells U0 /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/bd_0/ip/ip_1/bd_9054_rst_0_0.xdc
-  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/bd_0/ip/ip_1/bd_9054_rst_0_0.xdc]
-  read_xdc -ref bd_9054_ilmb_0 -cells U0 /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/bd_0/ip/ip_2/bd_9054_ilmb_0.xdc
-  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/bd_0/ip/ip_2/bd_9054_ilmb_0.xdc]
-  read_xdc -ref bd_9054_dlmb_0 -cells U0 /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/bd_0/ip/ip_3/bd_9054_dlmb_0.xdc
-  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/bd_0/ip/ip_3/bd_9054_dlmb_0.xdc]
-  read_xdc -prop_thru_buffers -ref bd_9054_iomodule_0_0 -cells U0 /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/bd_0/ip/ip_10/bd_9054_iomodule_0_0_board.xdc
-  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/bd_0/ip/ip_10/bd_9054_iomodule_0_0_board.xdc]
-  read_xdc -prop_thru_buffers -ref ddr4_0_microblaze_mcs -cells inst /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/ip_0/ddr4_0_microblaze_mcs_board.xdc
-  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/ip_0/ddr4_0_microblaze_mcs_board.xdc]
-  read_xdc -prop_thru_buffers -ref ddr4_0 -cells inst /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/ddr4_0_board.xdc
-  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/ddr4_0_board.xdc]
-  read_xdc -ref ddr4_0 -cells inst /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/par/ddr4_0.xdc
-  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/ddr4_0/par/ddr4_0.xdc]
-  link_design -top U500VCU118DevKitFPGAChip -part xczu9eg-ffvb1156-2-i-es2
+  read_xdc -ref bd_28a7_microblaze_I_0 -cells U0 /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/bd_0/ip/ip_0/bd_28a7_microblaze_I_0.xdc
+  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/bd_0/ip/ip_0/bd_28a7_microblaze_I_0.xdc]
+  read_xdc -prop_thru_buffers -ref bd_28a7_rst_0_0 -cells U0 /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/bd_0/ip/ip_1/bd_28a7_rst_0_0_board.xdc
+  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/bd_0/ip/ip_1/bd_28a7_rst_0_0_board.xdc]
+  read_xdc -ref bd_28a7_rst_0_0 -cells U0 /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/bd_0/ip/ip_1/bd_28a7_rst_0_0.xdc
+  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/bd_0/ip/ip_1/bd_28a7_rst_0_0.xdc]
+  read_xdc -ref bd_28a7_ilmb_0 -cells U0 /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/bd_0/ip/ip_2/bd_28a7_ilmb_0.xdc
+  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/bd_0/ip/ip_2/bd_28a7_ilmb_0.xdc]
+  read_xdc -ref bd_28a7_dlmb_0 -cells U0 /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/bd_0/ip/ip_3/bd_28a7_dlmb_0.xdc
+  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/bd_0/ip/ip_3/bd_28a7_dlmb_0.xdc]
+  read_xdc -prop_thru_buffers -ref bd_28a7_iomodule_0_0 -cells U0 /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/bd_0/ip/ip_10/bd_28a7_iomodule_0_0_board.xdc
+  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/bd_0/ip/ip_10/bd_28a7_iomodule_0_0_board.xdc]
+  read_xdc -prop_thru_buffers -ref vcu118mig_microblaze_mcs -cells inst /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/ip_0/vcu118mig_microblaze_mcs_board.xdc
+  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/ip_0/vcu118mig_microblaze_mcs_board.xdc]
+  read_xdc -prop_thru_buffers -ref vcu118mig -cells inst /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/vcu118mig_board.xdc
+  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/vcu118mig_board.xdc]
+  read_xdc -ref vcu118mig -cells inst /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/par/vcu118mig.xdc
+  set_property processing_order EARLY [get_files /home/yang/vcu118/vcu118.srcs/sources_1/ip/vcu118mig/par/vcu118mig.xdc]
+  read_xdc /home/yang/code/freedom/fpga-shells/xilinx/vcu118/constraints/vcu118-master.xdc
+  link_design -top U500VCU118DevKitFPGAChip -part xcvu9p-flga2104-2L-e-es1
   write_hwdef -file U500VCU118DevKitFPGAChip.hwdef
   close_msg_db -file init_design.pb
 } RESULT]

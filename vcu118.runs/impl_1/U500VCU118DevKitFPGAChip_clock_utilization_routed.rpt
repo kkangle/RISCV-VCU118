@@ -1,0 +1,1238 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
+| Date              : Thu Aug  2 17:08:48 2018
+| Host              : yang-linux running 64-bit Ubuntu 16.04.4 LTS
+| Command           : report_clock_utilization -file U500VCU118DevKitFPGAChip_clock_utilization_routed.rpt
+| Design            : U500VCU118DevKitFPGAChip
+| Device            : xcvu9p-flga2104
+| Speed File        : -2L  ADVANCE 1.03 09-04-2016
+| Temperature Grade : E
+-----------------------------------------------------------------------------------------------------------
+
+Clock Utilization Report
+
+Table of Contents
+-----------------
+1. Clock Primitive Utilization
+2. Global Clock Resources
+3. Global Clock Source Details
+4. Clock Regions : Clock Primitives
+5. Clock Regions : Load Primitives
+6. Clock Regions : Global Clock Summary
+7. Clock Regions : Routing Resource Utilization
+8. Cell Type Counts per Global Clock: Region X3Y5
+9. Cell Type Counts per Global Clock: Region X4Y5
+10. Cell Type Counts per Global Clock: Region X3Y6
+11. Cell Type Counts per Global Clock: Region X4Y6
+12. Cell Type Counts per Global Clock: Region X3Y7
+13. Cell Type Counts per Global Clock: Region X4Y7
+14. Cell Type Counts per Global Clock: Region X3Y8
+15. Cell Type Counts per Global Clock: Region X4Y8
+16. Cell Type Counts per Global Clock: Region X2Y9
+17. Cell Type Counts per Global Clock: Region X3Y9
+18. Cell Type Counts per Global Clock: Region X4Y9
+19. Cell Type Counts per Global Clock: Region X1Y10
+20. Cell Type Counts per Global Clock: Region X2Y10
+21. Cell Type Counts per Global Clock: Region X3Y10
+22. Cell Type Counts per Global Clock: Region X4Y10
+23. Cell Type Counts per Global Clock: Region X5Y10
+24. Cell Type Counts per Global Clock: Region X1Y11
+25. Cell Type Counts per Global Clock: Region X2Y11
+26. Cell Type Counts per Global Clock: Region X3Y11
+27. Cell Type Counts per Global Clock: Region X4Y11
+28. Cell Type Counts per Global Clock: Region X5Y11
+29. Cell Type Counts per Global Clock: Region X1Y12
+30. Cell Type Counts per Global Clock: Region X2Y12
+31. Cell Type Counts per Global Clock: Region X3Y12
+32. Cell Type Counts per Global Clock: Region X4Y12
+33. Cell Type Counts per Global Clock: Region X5Y12
+34. Cell Type Counts per Global Clock: Region X2Y13
+35. Cell Type Counts per Global Clock: Region X3Y13
+36. Cell Type Counts per Global Clock: Region X4Y13
+37. Cell Type Counts per Global Clock: Region X5Y13
+38. Cell Type Counts per Global Clock: Region X3Y14
+39. Cell Type Counts per Global Clock: Region X4Y14
+40. Cell Type Counts per Global Clock: Region X5Y14
+41. Load Cell Placement Summary for Global Clock g0
+42. Load Cell Placement Summary for Global Clock g1
+43. Load Cell Placement Summary for Global Clock g2
+44. Load Cell Placement Summary for Global Clock g3
+45. Load Cell Placement Summary for Global Clock g4
+46. Load Cell Placement Summary for Global Clock g5
+47. Load Cell Placement Summary for Global Clock g6
+48. Load Cell Placement Summary for Global Clock g7
+49. Load Cell Placement Summary for Global Clock g8
+
+1. Clock Primitive Utilization
+------------------------------
+
++------------+------+-----------+-----+--------------+--------+
+| Type       | Used | Available | LOC | Clock Region | Pblock |
++------------+------+-----------+-----+--------------+--------+
+| BUFGCE     |    9 |       720 |   0 |            0 |      0 |
+| BUFGCE_DIV |    0 |       120 |   0 |            0 |      0 |
+| BUFGCTRL   |    0 |       240 |   0 |            0 |      0 |
+| BUFG_GT    |    0 |       720 |   0 |            0 |      0 |
+| MMCM       |    3 |        30 |   1 |            0 |      0 |
+| PLL        |    3 |        60 |   0 |            0 |      0 |
++------------+------+-----------+-----+--------------+--------+
+
+
+2. Global Clock Resources
+-------------------------
+
++-----------+-----------+-----------------+------------+---------------+--------------+-------+-------------------+-------------------+-------------+-----------------+--------------+----------------------------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| Global Id | Source Id | Driver Type/Pin | Constraint | Site          | Clock Region | Root  | Clock Delay Group | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock                                                                            | Driver Pin                                                                         | Net                                                                              |
++-----------+-----------+-----------------+------------+---------------+--------------+-------+-------------------+-------------------+-------------+-----------------+--------------+----------------------------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| g0        | src0      | BUFGCE/O        | None       | BUFGCE_X1Y266 | X4Y11        | X3Y9  |                   |                25 |       58729 |               0 |       10.000 | clk_out4_clk_wiz_0                                                               | vcu118_sys_clock_mmcm0/inst/clkout4_buf/O                                          | vcu118_sys_clock_mmcm0/inst/clk_out4                                             |
+| g1        | src1      | BUFGCE/O        | None       | BUFGCE_X1Y326 | X4Y13        | X4Y13 |                   |                 8 |       20687 |               3 |        5.000 | mmcm_clkout0                                                                     | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/u_bufg_divClk/O  | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/c0_ddr4_ui_clk |
+| g2        | src1      | BUFGCE/O        | None       | BUFGCE_X1Y332 | X4Y13        | X4Y13 |                   |                 3 |        1574 |               0 |       10.000 | mmcm_clkout6                                                                     | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/u_bufg_riuClk/O  | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/c0_riu_clk     |
+| g3        | src1      | BUFGCE/O        | None       | BUFGCE_X1Y320 | X4Y13        | X4Y13 |                   |                 2 |         403 |               0 |       20.000 | mmcm_clkout5                                                                     | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/u_bufg_dbg_clk/O | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/dbg_clk        |
+| g4        | src2      | BUFGCE/O        | None       | BUFGCE_X1Y147 | X4Y6         | X4Y13 |                   |                 4 |         360 |               0 |       50.000 | dbg_hub/inst/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK | dbg_hub/inst/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O                                  | dbg_hub/inst/itck_i                                                              |
+| g5        | src3      | BUFGCE/O        | None       | BUFGCE_X0Y224 | X2Y9         | X4Y11 |                   |                 1 |         306 |               0 |              |                                                                                  | jtag_TCK_IBUF_BUFG_inst/O                                                          | jtag_TCK_IBUF_BUFG                                                               |
+| g6        | src4      | BUFGCE/O        | None       | BUFGCE_X1Y292 | X4Y12        | X4Y12 |                   |                 3 |          17 |               3 |        4.000 | sys_diff_clk                                                                     | sys_clk_ibufds_O_BUFGCE_inst/O                                                     | sys_clk_ibufds_O_BUFGCE                                                          |
+| g7        | src0      | BUFGCE/O        | None       | BUFGCE_X1Y265 | X4Y11        | X4Y11 | n/a               |                 1 |           0 |               1 |       10.000 | clkfbout_clk_wiz_0                                                               | vcu118_sys_clock_mmcm0/inst/clkf_buf/O                                             | vcu118_sys_clock_mmcm0/inst/clkfbout_buf_clk_wiz_0                               |
+| g8        | src5      | BUFGCE/O        | None       | BUFGCE_X1Y288 | X4Y12        | X4Y12 | n/a               |                 1 |           0 |               1 |       10.000 | clkfbout_clk_wiz_1                                                               | vcu118_sys_clock_mmcm1/inst/clkf_buf/O                                             | vcu118_sys_clock_mmcm1/inst/clkfbout_buf_clk_wiz_1                               |
++-----------+-----------+-----------------+------------+---------------+--------------+-------+-------------------+-------------------+-------------+-----------------+--------------+----------------------------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+
+
+3. Global Clock Source Details
+------------------------------
+
++-----------+-----------+---------------------+------------+------------------+--------------+-------------+-----------------+---------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| Source Id | Global Id | Driver Type/Pin     | Constraint | Site             | Clock Region | Clock Loads | Non-Clock Loads | Source Clock Period | Source Clock                                                                     | Driver Pin                                                                                            | Net                                                                            |
++-----------+-----------+---------------------+------------+------------------+--------------+-------------+-----------------+---------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| src0      | g0        | MMCME4_ADV/CLKOUT3  | None       | MMCM_X1Y11       | X4Y11        |           1 |               0 |              10.000 | clk_out4_clk_wiz_0                                                               | vcu118_sys_clock_mmcm0/inst/mmcme3_adv_inst/CLKOUT3                                                   | vcu118_sys_clock_mmcm0/inst/clk_out4_clk_wiz_0                                 |
+| src0      | g7        | MMCME4_ADV/CLKFBOUT | None       | MMCM_X1Y11       | X4Y11        |           1 |               0 |              10.000 | clkfbout_clk_wiz_0                                                               | vcu118_sys_clock_mmcm0/inst/mmcme3_adv_inst/CLKFBOUT                                                  | vcu118_sys_clock_mmcm0/inst/clkfbout_clk_wiz_0                                 |
+| src1      | g1        | MMCME4_ADV/CLKOUT0  | MMCM_X1Y13 | MMCM_X1Y13       | X4Y13        |           1 |               0 |               5.000 | mmcm_clkout0                                                                     | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/gen_mmcme4.u_mmcme_adv_inst/CLKOUT0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/mmcm_clkout0 |
+| src1      | g3        | MMCME4_ADV/CLKOUT5  | MMCM_X1Y13 | MMCM_X1Y13       | X4Y13        |           1 |               0 |              20.000 | mmcm_clkout5                                                                     | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/gen_mmcme4.u_mmcme_adv_inst/CLKOUT5 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/mmcm_clkout5 |
+| src1      | g2        | MMCME4_ADV/CLKOUT6  | MMCM_X1Y13 | MMCM_X1Y13       | X4Y13        |           1 |               0 |              10.000 | mmcm_clkout6                                                                     | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/gen_mmcme4.u_mmcme_adv_inst/CLKOUT6 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/mmcm_clkout6 |
+| src2      | g4        | BSCANE2/TCK         | None       | CONFIG_SITE_X0Y1 | X5Y6         |           1 |               0 |              50.000 | dbg_hub/inst/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK | dbg_hub/inst/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK                               | dbg_hub/inst/SWITCH_N_EXT_BSCAN.bscan_inst/tck_bs                              |
+| src3      | g5        | IBUFCTRL/O          | IOB_X0Y420 | IOB_X0Y420       | X2Y8         |           1 |               0 |                     |                                                                                  | jtag_TCK_IBUF_inst/IBUFCTRL_INST/O                                                                    | jtag_TCK_IBUF_inst/O                                                           |
+| src4      | g6        | IBUFCTRL/O          | IOB_X1Y650 | IOB_X1Y650       | X4Y12        |           1 |               0 |               4.000 | sys_diff_clk                                                                     | sys_clk_ibufds/IBUFCTRL_INST/O                                                                        | sys_clk_ibufds/O                                                               |
+| src5      | g8        | MMCME4_ADV/CLKFBOUT | None       | MMCM_X1Y12       | X4Y12        |           1 |               0 |              10.000 | clkfbout_clk_wiz_1                                                               | vcu118_sys_clock_mmcm1/inst/mmcme3_adv_inst/CLKFBOUT                                                  | vcu118_sys_clock_mmcm1/inst/clkfbout_clk_wiz_1                                 |
++-----------+-----------+---------------------+------------+------------------+--------------+-------------+-----------------+---------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+
+
+4. Clock Regions : Clock Primitives
+-----------------------------------
+
++-------------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+|                   | Global Clock |    BUFGCE    |  BUFGCE_DIV  |   BUFGCTRL   |    BUFG_GT   |     MMCM     |      PLL     |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+| Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+| X0Y0              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X1Y0              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X2Y0              |    0 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X3Y0              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X4Y0              |    0 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X5Y0              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X0Y1              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X1Y1              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X2Y1              |    0 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X3Y1              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X4Y1              |    0 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X5Y1              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X0Y2              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X1Y2              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X2Y2              |    0 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X3Y2              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X4Y2              |    0 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X5Y2              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X0Y3              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X1Y3              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X2Y3              |    0 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X3Y3              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X4Y3              |    0 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X5Y3              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X0Y4              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X1Y4              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X2Y4              |    0 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X3Y4              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X4Y4              |    0 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X5Y4              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X0Y5              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X1Y5              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X2Y5              |    0 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X3Y5              |    1 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X4Y5              |    1 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X5Y5              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X0Y6              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X1Y6              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X2Y6              |    0 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X3Y6              |    1 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X4Y6              |    1 |    24 |    1 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X5Y6              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X0Y7              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X1Y7              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X2Y7              |    0 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X3Y7              |    1 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X4Y7              |    2 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X5Y7              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X0Y8              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X1Y8              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X2Y8              |    0 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X3Y8              |    1 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X4Y8              |    2 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X5Y8              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X0Y9              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X1Y9              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X2Y9              |    1 |    24 |    1 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X3Y9              |    2 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X4Y9              |    2 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X5Y9              |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X0Y10             |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X1Y10             |    1 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X2Y10             |    1 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X3Y10             |    1 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X4Y10             |    3 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X5Y10             |    1 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X0Y11             |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X1Y11             |    1 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X2Y11             |    1 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X3Y11             |    2 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X4Y11             |    6 |    24 |    2 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    1 |     1 |    0 |     2 |
+| X5Y11             |    1 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X0Y12             |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X1Y12             |    1 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X2Y12             |    1 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X3Y12             |    2 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X4Y12             |    6 |    24 |    2 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    1 |     1 |    0 |     2 |
+| X5Y12             |    1 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X0Y13             |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X1Y13             |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X2Y13             |    1 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X3Y13             |    2 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X4Y13             |    6 |    24 |    3 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    1 |     1 |    0 |     2 |
+| X5Y13             |    2 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X0Y14             |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
+| X1Y14             |    0 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X2Y14             |    0 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X3Y14             |    2 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |
+| X4Y14             |    5 |    24 |    0 |    24 |    0 |     4 |    0 |     8 |    0 |     0 |    0 |     1 |    0 |     2 |
+| X5Y14             |    2 |    24 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |    24 |    0 |     0 |    0 |     0 |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+* Global Clock column represents track count; while other columns represents cell counts
+
+
+5. Clock Regions : Load Primitives
+----------------------------------
+
++-------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+
+|                   |   Global Clock   |        FF        |      LUTRAM      |  Block RAM Tiles |       URAM       |        DSP       |        GT        |      HARD IP     |
++-------------------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+
+| Clock Region Name | Used   | Avail   | Used   | Avail   | Used   | Avail   | Used   | Avail   | Used   | Avail   | Used   | Avail   | Used   | Avail   | Used   | Avail   |
++-------------------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+
+| X0Y0              |      0 |      24 |      0 |   27840 |      0 |    6720 |      0 |     108 |      0 |       0 |      0 |     120 |      0 |       4 |      0 |       1 |
+| X1Y0              |      0 |      24 |      0 |   21120 |      0 |    5280 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X2Y0              |      0 |      24 |      0 |   29760 |      0 |    6720 |      0 |     108 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X3Y0              |      0 |      24 |      0 |   21120 |      0 |    5280 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X4Y0              |      0 |      24 |      0 |   26880 |      0 |    6240 |      0 |      72 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X5Y0              |      0 |      24 |      0 |   24000 |      0 |    5760 |      0 |      72 |      0 |       0 |      0 |      48 |      0 |       4 |      0 |       1 |
+| X0Y1              |      0 |      24 |      0 |   29760 |      0 |    7680 |      0 |     108 |      0 |       0 |      0 |     120 |      0 |       4 |      0 |       1 |
+| X1Y1              |      0 |      24 |      0 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X2Y1              |      0 |      24 |      0 |   31680 |      0 |    7680 |      0 |     108 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X3Y1              |      0 |      24 |      0 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X4Y1              |      0 |      24 |      0 |   28800 |      0 |    7200 |      0 |      72 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X5Y1              |      0 |      24 |      0 |   25920 |      0 |    6720 |      0 |      72 |      0 |       0 |      0 |      48 |      0 |       4 |      0 |       0 |
+| X0Y2              |      0 |      24 |      0 |   29760 |      0 |    7680 |      0 |     108 |      0 |       0 |      0 |     120 |      0 |       4 |      0 |       1 |
+| X1Y2              |      0 |      24 |      0 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X2Y2              |      0 |      24 |      0 |   31680 |      0 |    7680 |      0 |     108 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X3Y2              |      0 |      24 |      0 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X4Y2              |      0 |      24 |      0 |   28800 |      0 |    7200 |      0 |      72 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X5Y2              |      0 |      24 |      0 |   25920 |      0 |    6720 |      0 |      72 |      0 |       0 |      0 |      48 |      0 |       4 |      0 |       0 |
+| X0Y3              |      0 |      24 |      0 |   29760 |      0 |    7680 |      0 |     108 |      0 |       0 |      0 |     120 |      0 |       4 |      0 |       1 |
+| X1Y3              |      0 |      24 |      0 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X2Y3              |      0 |      24 |      0 |   31680 |      0 |    7680 |      0 |     108 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X3Y3              |      0 |      24 |      0 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X4Y3              |      0 |      24 |      0 |   28800 |      0 |    7200 |      0 |      72 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X5Y3              |      0 |      24 |      0 |   25920 |      0 |    6720 |      0 |      72 |      0 |       0 |      0 |      48 |      0 |       4 |      0 |       1 |
+| X0Y4              |      0 |      24 |      0 |   27840 |      0 |    6720 |      0 |     108 |      0 |       0 |      0 |     120 |      0 |       4 |      0 |       1 |
+| X1Y4              |      0 |      24 |      0 |   21120 |      0 |    5280 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X2Y4              |      0 |      24 |      0 |   29760 |      0 |    6720 |      0 |     108 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X3Y4              |      0 |      24 |      0 |   21120 |      0 |    5280 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X4Y4              |      0 |      24 |      0 |   26880 |      0 |    6240 |      0 |      72 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X5Y4              |      0 |      24 |      0 |   24000 |      0 |    5760 |      0 |      72 |      0 |       0 |      0 |      48 |      0 |       4 |      0 |       1 |
+| X0Y5              |      0 |      24 |      0 |   27840 |      0 |    6720 |      0 |     108 |      0 |       0 |      0 |     120 |      0 |       4 |      0 |       1 |
+| X1Y5              |      0 |      24 |      0 |   21120 |      0 |    5280 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X2Y5              |      0 |      24 |      0 |   29760 |      0 |    6720 |      0 |     108 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X3Y5              |      1 |      24 |      0 |   21120 |      0 |    5280 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X4Y5              |      1 |      24 |      1 |   26880 |      0 |    6240 |      0 |      72 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X5Y5              |      0 |      24 |      0 |   24000 |      0 |    5760 |      0 |      72 |      0 |       0 |      0 |      48 |      0 |       4 |      0 |       1 |
+| X0Y6              |      0 |      24 |      0 |   29760 |      0 |    7680 |      0 |     108 |      0 |       0 |      0 |     120 |      0 |       4 |      0 |       1 |
+| X1Y6              |      0 |      24 |      0 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X2Y6              |      0 |      24 |      0 |   31680 |      0 |    7680 |      0 |     108 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X3Y6              |      1 |      24 |      0 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X4Y6              |      1 |      24 |      0 |   28800 |      0 |    7200 |      0 |      72 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X5Y6              |      0 |      24 |      0 |   25920 |      0 |    6720 |      0 |      72 |      0 |       0 |      0 |      48 |      0 |       4 |      0 |       0 |
+| X0Y7              |      0 |      24 |      0 |   29760 |      0 |    7680 |      0 |     108 |      0 |       0 |      0 |     120 |      0 |       4 |      0 |       1 |
+| X1Y7              |      0 |      24 |      0 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X2Y7              |      0 |      24 |      0 |   31680 |      0 |    7680 |      0 |     108 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X3Y7              |      1 |      24 |      0 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X4Y7              |      2 |      24 |      1 |   28800 |      0 |    7200 |      0 |      72 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X5Y7              |      0 |      24 |      0 |   25920 |      0 |    6720 |      0 |      72 |      0 |       0 |      0 |      48 |      0 |       4 |      0 |       0 |
+| X0Y8              |      0 |      24 |      0 |   29760 |      0 |    7680 |      0 |     108 |      0 |       0 |      0 |     120 |      0 |       4 |      0 |       1 |
+| X1Y8              |      0 |      24 |      0 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X2Y8              |      0 |      24 |      0 |   31680 |      0 |    7680 |      0 |     108 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X3Y8              |      1 |      24 |      0 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X4Y8              |      2 |      24 |      2 |   28800 |      0 |    7200 |      0 |      72 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X5Y8              |      0 |      24 |      0 |   25920 |      0 |    6720 |      0 |      72 |      0 |       0 |      0 |      48 |      0 |       4 |      0 |       1 |
+| X0Y9              |      0 |      24 |      0 |   27840 |      0 |    6720 |      0 |     108 |      0 |       0 |      0 |     120 |      0 |       4 |      0 |       1 |
+| X1Y9              |      0 |      24 |      0 |   21120 |      0 |    5280 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X2Y9              |      1 |      24 |      0 |   29760 |      0 |    6720 |      0 |     108 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X3Y9              |      2 |      24 |      0 |   21120 |      0 |    5280 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X4Y9              |      2 |      24 |      0 |   26880 |      0 |    6240 |      0 |      72 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X5Y9              |      0 |      24 |      0 |   24000 |      0 |    5760 |      0 |      72 |      0 |       0 |      0 |      48 |      0 |       4 |      0 |       1 |
+| X0Y10             |      0 |      24 |      0 |   27840 |      0 |    6720 |      0 |     108 |      0 |       0 |      0 |     120 |      0 |       4 |      0 |       1 |
+| X1Y10             |      1 |      24 |    971 |   21120 |      0 |    5280 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X2Y10             |      1 |      24 |   3593 |   29760 |      0 |    6720 |      8 |     108 |      0 |      16 |     10 |      72 |      0 |       0 |      0 |       0 |
+| X3Y10             |      1 |      24 |   3118 |   21120 |      0 |    5280 |     12 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X4Y10             |      3 |      24 |   4559 |   26880 |      0 |    6240 |     23 |      72 |      0 |      16 |      5 |      72 |      0 |       0 |      0 |       0 |
+| X5Y10             |      1 |      24 |   3743 |   24000 |      0 |    5760 |      0 |      72 |      0 |       0 |      9 |      48 |      0 |       4 |      0 |       1 |
+| X0Y11             |      0 |      24 |      0 |   29760 |      0 |    7680 |      0 |     108 |      0 |       0 |      0 |     120 |      0 |       4 |      0 |       1 |
+| X1Y11             |      1 |      24 |   2277 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X2Y11             |      1 |      24 |   6379 |   31680 |      0 |    7680 |     42 |     108 |      0 |      16 |      4 |      72 |      0 |       0 |      0 |       0 |
+| X3Y11             |      2 |      24 |   2781 |   23040 |      5 |    6240 |     14 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X4Y11             |      6 |      24 |   4437 |   28800 |     12 |    7200 |     27 |      72 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X5Y11             |      1 |      24 |   6133 |   25920 |      0 |    6720 |      6 |      72 |      0 |       0 |      0 |      48 |      0 |       4 |      0 |       0 |
+| X0Y12             |      0 |      24 |      0 |   29760 |      0 |    7680 |      0 |     108 |      0 |       0 |      0 |     120 |      0 |       4 |      0 |       1 |
+| X1Y12             |      1 |      24 |    770 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X2Y12             |      1 |      24 |   4303 |   31680 |      0 |    7680 |     18 |     108 |      0 |      16 |      4 |      72 |      0 |       0 |      0 |       0 |
+| X3Y12             |      2 |      24 |   2182 |   23040 |      2 |    6240 |     10 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X4Y12             |      6 |      24 |   8337 |   28800 |     97 |    7200 |     14 |      72 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X5Y12             |      1 |      24 |   4428 |   25920 |      0 |    6720 |     20 |      72 |      0 |       0 |      0 |      48 |      0 |       4 |      0 |       0 |
+| X0Y13             |      0 |      24 |      0 |   29760 |      0 |    7680 |      0 |     108 |      0 |       0 |      0 |     120 |      0 |       4 |      0 |       1 |
+| X1Y13             |      0 |      24 |      0 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X2Y13             |      1 |      24 |   1255 |   31680 |      0 |    7680 |      0 |     108 |      0 |      16 |      4 |      72 |      0 |       0 |      0 |       0 |
+| X3Y13             |      2 |      24 |   2463 |   23040 |      0 |    6240 |      0 |      36 |      0 |      16 |      6 |      72 |      0 |       0 |      0 |       0 |
+| X4Y13             |      6 |      24 |   7967 |   28800 |    242 |    7200 |     23 |      72 |      0 |      16 |      3 |      72 |      0 |       0 |      0 |       0 |
+| X5Y13             |      2 |      24 |   2838 |   25920 |      0 |    6720 |      0 |      72 |      0 |       0 |      5 |      48 |      0 |       4 |      0 |       1 |
+| X0Y14             |      0 |      24 |      0 |   27840 |      0 |    6720 |      0 |     108 |      0 |       0 |      0 |     120 |      0 |       4 |      0 |       1 |
+| X1Y14             |      0 |      24 |      0 |   21120 |      0 |    5280 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X2Y14             |      0 |      24 |      0 |   29760 |      0 |    6720 |      0 |     108 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X3Y14             |      2 |      24 |    233 |   21120 |      0 |    5280 |      0 |      36 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X4Y14             |      5 |      24 |   5987 |   26880 |    350 |    6240 |      3 |      72 |      0 |      16 |      0 |      72 |      0 |       0 |      0 |       0 |
+| X5Y14             |      2 |      24 |   1218 |   24000 |      0 |    5760 |      0 |      72 |      0 |       0 |      9 |      48 |      0 |       4 |      0 |       1 |
++-------------------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+
+* Global Clock column represents track count; while other columns represents cell counts
+
+
+6. Clock Regions : Global Clock Summary
+---------------------------------------
+
++-----+----+----+----+----+----+----+
+|     | X0 | X1 | X2 | X3 | X4 | X5 |
++-----+----+----+----+----+----+----+
+| Y14 |  0 |  0 |  0 |  2 |  5 |  2 |
+| Y13 |  0 |  0 |  1 |  2 |  6 |  2 |
+| Y12 |  0 |  1 |  1 |  2 |  6 |  1 |
+| Y11 |  0 |  1 |  1 |  2 |  6 |  1 |
+| Y10 |  0 |  1 |  1 |  1 |  3 |  1 |
+| Y9  |  0 |  0 |  1 |  2 |  2 |  0 |
+| Y8  |  0 |  0 |  0 |  1 |  2 |  0 |
+| Y7  |  0 |  0 |  0 |  1 |  2 |  0 |
+| Y6  |  0 |  0 |  0 |  1 |  1 |  0 |
+| Y5  |  0 |  0 |  0 |  1 |  1 |  0 |
+| Y4  |  0 |  0 |  0 |  0 |  0 |  0 |
+| Y3  |  0 |  0 |  0 |  0 |  0 |  0 |
+| Y2  |  0 |  0 |  0 |  0 |  0 |  0 |
+| Y1  |  0 |  0 |  0 |  0 |  0 |  0 |
+| Y0  |  0 |  0 |  0 |  0 |  0 |  0 |
++-----+----+----+----+----+----+----+
+
+
+7. Clock Regions : Routing Resource Utilization
+-----------------------------------------------
+
++-------------------+----------------------+----------------------+----------------------+----------------------+
+|                   |        HROUTES       |        HDISTRS       |        VROUTES       |        VDISTRS       |
++-------------------+------+-------+-------+------+-------+-------+------+-------+-------+------+-------+-------+
+| Clock Region Name | Used | Avail | Util% | Used | Avail | Util% | Used | Avail | Util% | Used | Avail | Util% |
++-------------------+------+-------+-------+------+-------+-------+------+-------+-------+------+-------+-------+
+| X0Y0              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X1Y0              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X2Y0              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X3Y0              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X4Y0              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X5Y0              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X0Y1              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X1Y1              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X2Y1              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X3Y1              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X4Y1              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X5Y1              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X0Y2              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X1Y2              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X2Y2              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X3Y2              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X4Y2              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X5Y2              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X0Y3              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X1Y3              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X2Y3              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X3Y3              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X4Y3              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X5Y3              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X0Y4              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X1Y4              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X2Y4              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X3Y4              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X4Y4              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X5Y4              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X0Y5              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X1Y5              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X2Y5              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X3Y5              |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    1 |    24 |  4.17 |
+| X4Y5              |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X5Y5              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X0Y6              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X1Y6              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X2Y6              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X3Y6              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    1 |    24 |  4.17 |
+| X4Y6              |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X5Y6              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X0Y7              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X1Y7              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X2Y7              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X3Y7              |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    1 |    24 |  4.17 |
+| X4Y7              |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |
+| X5Y7              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X0Y8              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X1Y8              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X2Y8              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X3Y8              |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    1 |    24 |  4.17 |
+| X4Y8              |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |
+| X5Y8              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X0Y9              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X1Y9              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X2Y9              |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X3Y9              |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    1 |    24 |  4.17 |
+| X4Y9              |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |
+| X5Y9              |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X0Y10             |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X1Y10             |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X2Y10             |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X3Y10             |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    1 |    24 |  4.17 |    1 |    24 |  4.17 |
+| X4Y10             |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    2 |    24 |  8.33 |    0 |    24 |  0.00 |
+| X5Y10             |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X0Y11             |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X1Y11             |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X2Y11             |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X3Y11             |    1 |    24 |  4.17 |    2 |    24 |  8.33 |    1 |    24 |  4.17 |    1 |    24 |  4.17 |
+| X4Y11             |    1 |    24 |  4.17 |    5 |    24 | 20.83 |    2 |    24 |  8.33 |    3 |    24 | 12.50 |
+| X5Y11             |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X0Y12             |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X1Y12             |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X2Y12             |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X3Y12             |    0 |    24 |  0.00 |    2 |    24 |  8.33 |    0 |    24 |  0.00 |    1 |    24 |  4.17 |
+| X4Y12             |    0 |    24 |  0.00 |    5 |    24 | 20.83 |    1 |    24 |  4.17 |    3 |    24 | 12.50 |
+| X5Y12             |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X0Y13             |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X1Y13             |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X2Y13             |    0 |    24 |  0.00 |    1 |    24 |  4.17 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X3Y13             |    0 |    24 |  0.00 |    2 |    24 |  8.33 |    0 |    24 |  0.00 |    1 |    24 |  4.17 |
+| X4Y13             |    0 |    24 |  0.00 |    6 |    24 | 25.00 |    1 |    24 |  4.17 |    4 |    24 | 16.67 |
+| X5Y13             |    0 |    24 |  0.00 |    2 |    24 |  8.33 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X0Y14             |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X1Y14             |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X2Y14             |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X3Y14             |    0 |    24 |  0.00 |    2 |    24 |  8.33 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X4Y14             |    0 |    24 |  0.00 |    5 |    24 | 20.83 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
+| X5Y14             |    0 |    24 |  0.00 |    2 |    24 |  8.33 |    0 |    24 |  0.00 |    0 |    24 |  0.00 |
++-------------------+------+-------+-------+------+-------+-------+------+-------+-------+------+-------+-------+
+
+
+8. Cell Type Counts per Global Clock: Region X3Y5
+-------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0+       | 2     | BUFGCE/O        | None       |           0 |               0 |  0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+**** In Global Id column, sympbol '+' indicates that global clock was used only to route through the clock region.
+
+
+9. Cell Type Counts per Global Clock: Region X4Y5
+-------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |           1 |               0 |  1 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+10. Cell Type Counts per Global Clock: Region X3Y6
+--------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0+       | 2     | BUFGCE/O        | None       |           0 |               0 |  0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+**** In Global Id column, sympbol '+' indicates that global clock was used only to route through the clock region.
+
+
+11. Cell Type Counts per Global Clock: Region X4Y6
+--------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+---------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                 |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+---------------------+
+| g4+       | 3     | BUFGCE/O        | None       |           0 |               0 |  0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+---------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+**** In Global Id column, sympbol '+' indicates that global clock was used only to route through the clock region.
+
+
+12. Cell Type Counts per Global Clock: Region X3Y7
+--------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0+       | 2     | BUFGCE/O        | None       |           0 |               0 |  0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+**** In Global Id column, sympbol '+' indicates that global clock was used only to route through the clock region.
+
+
+13. Cell Type Counts per Global Clock: Region X4Y7
+--------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |           1 |               0 |  1 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
+| g4+       | 3     | BUFGCE/O        | None       |           0 |               0 |  0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i                  |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+**** In Global Id column, sympbol '+' indicates that global clock was used only to route through the clock region.
+
+
+14. Cell Type Counts per Global Clock: Region X3Y8
+--------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0+       | 2     | BUFGCE/O        | None       |           0 |               0 |  0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+**** In Global Id column, sympbol '+' indicates that global clock was used only to route through the clock region.
+
+
+15. Cell Type Counts per Global Clock: Region X4Y8
+--------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |           2 |               0 |  2 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
+| g4+       | 3     | BUFGCE/O        | None       |           0 |               0 |  0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i                  |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+**** In Global Id column, sympbol '+' indicates that global clock was used only to route through the clock region.
+
+
+16. Cell Type Counts per Global Clock: Region X2Y9
+--------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------+
+| g5+       | 8     | BUFGCE/O        | None       |           0 |               0 |  0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | jtag_TCK_IBUF_BUFG |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+**** In Global Id column, sympbol '+' indicates that global clock was used only to route through the clock region.
+
+
+17. Cell Type Counts per Global Clock: Region X3Y9
+--------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0+       | 2     | BUFGCE/O        | None       |           0 |               0 |  0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
+| g5+       | 8     | BUFGCE/O        | None       |           0 |               0 |  0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | jtag_TCK_IBUF_BUFG                   |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+**** In Global Id column, sympbol '+' indicates that global clock was used only to route through the clock region.
+
+
+18. Cell Type Counts per Global Clock: Region X4Y9
+--------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+---------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                 |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+---------------------+
+| g4+       | 3     | BUFGCE/O        | None       |           0 |               0 |  0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i |
+| g5+       | 8     | BUFGCE/O        | None       |           0 |               0 |  0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | jtag_TCK_IBUF_BUFG  |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+------+-----+----+------+-----+---------+---------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+**** In Global Id column, sympbol '+' indicates that global clock was used only to route through the clock region.
+
+
+19. Cell Type Counts per Global Clock: Region X1Y10
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |         971 |               0 | 971 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+20. Cell Type Counts per Global Clock: Region X2Y10
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        3611 |               0 | 3593 |      0 |    8 |    0 |  10 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+21. Cell Type Counts per Global Clock: Region X3Y10
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        3130 |               0 | 3118 |      0 |   12 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+22. Cell Type Counts per Global Clock: Region X4Y10
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        4587 |               0 | 4559 |      0 |   23 |    0 |   5 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
+| g4+       | 3     | BUFGCE/O        | None       |           0 |               0 |    0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i                  |
+| g5+       | 8     | BUFGCE/O        | None       |           0 |               0 |    0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | jtag_TCK_IBUF_BUFG                   |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+**** In Global Id column, sympbol '+' indicates that global clock was used only to route through the clock region.
+
+
+23. Cell Type Counts per Global Clock: Region X5Y10
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        3752 |               0 | 3743 |      0 |    0 |    0 |   9 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+24. Cell Type Counts per Global Clock: Region X1Y11
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        2277 |               0 | 2277 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+25. Cell Type Counts per Global Clock: Region X2Y11
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        6425 |               0 | 6379 |      0 |   42 |    0 |   4 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+26. Cell Type Counts per Global Clock: Region X3Y11
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                                                              |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        2797 |               0 | 2778 |      5 |   14 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4                                             |
+| g1        | 14    | BUFGCE/O        | None       |           3 |               0 |    3 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/c0_ddr4_ui_clk |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+27. Cell Type Counts per Global Clock: Region X4Y11
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                                                              |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        4154 |               0 | 4117 |     10 |   27 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4                                             |
+| g1        | 14    | BUFGCE/O        | None       |          16 |               0 |   16 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/c0_ddr4_ui_clk |
+| g4+       | 3     | BUFGCE/O        | None       |           0 |               0 |    0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i                                                              |
+| g5        | 8     | BUFGCE/O        | None       |         306 |               0 |  304 |      2 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | jtag_TCK_IBUF_BUFG                                                               |
+| g6        | 4     | BUFGCE/O        | None       |           0 |               1 |    0 |      0 |    0 |    0 |   0 |  0 |    1 |   0 |       0 | sys_clk_ibufds_O_BUFGCE                                                          |
+| g7        | 1     | BUFGCE/O        | None       |           0 |               1 |    0 |      0 |    0 |    0 |   0 |  0 |    1 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clkfbout_buf_clk_wiz_0                               |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+**** In Global Id column, sympbol '+' indicates that global clock was used only to route through the clock region.
+
+
+28. Cell Type Counts per Global Clock: Region X5Y11
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        6139 |               0 | 6133 |      0 |    6 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+29. Cell Type Counts per Global Clock: Region X1Y12
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |         770 |               0 | 770 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+30. Cell Type Counts per Global Clock: Region X2Y12
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        4325 |               0 | 4303 |      0 |   18 |    0 |   4 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+31. Cell Type Counts per Global Clock: Region X3Y12
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                                                              |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        2088 |               0 | 2077 |      1 |   10 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4                                             |
+| g1        | 14    | BUFGCE/O        | None       |         106 |               0 |  105 |      1 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/c0_ddr4_ui_clk |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+32. Cell Type Counts per Global Clock: Region X4Y12
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                                                              |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |         877 |               0 |  863 |      0 |   14 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4                                             |
+| g1        | 14    | BUFGCE/O        | None       |        7503 |               1 | 7371 |     97 |    0 |    0 |   0 |  0 |    0 |   1 |       0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/c0_ddr4_ui_clk |
+| g2        | 20    | BUFGCE/O        | None       |         105 |               0 |   97 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/c0_riu_clk     |
+| g4+       | 3     | BUFGCE/O        | None       |           0 |               0 |    0 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i                                                              |
+| g6        | 4     | BUFGCE/O        | None       |           6 |               1 |    6 |      0 |    0 |    0 |   0 |  0 |    1 |   0 |       0 | sys_clk_ibufds_O_BUFGCE                                                          |
+| g8        | 0     | BUFGCE/O        | None       |           0 |               1 |    0 |      0 |    0 |    0 |   0 |  0 |    1 |   0 |       0 | vcu118_sys_clock_mmcm1/inst/clkfbout_buf_clk_wiz_1                               |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+**** In Global Id column, sympbol '+' indicates that global clock was used only to route through the clock region.
+
+
+33. Cell Type Counts per Global Clock: Region X5Y12
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        4448 |               0 | 4428 |      0 |   20 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+34. Cell Type Counts per Global Clock: Region X2Y13
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        1259 |               0 | 1255 |      0 |    0 |    0 |   4 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+35. Cell Type Counts per Global Clock: Region X3Y13
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                                                              |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        2243 |               0 | 2237 |      0 |    0 |    0 |   6 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4                                             |
+| g1        | 14    | BUFGCE/O        | None       |         226 |               0 |  226 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/c0_ddr4_ui_clk |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+36. Cell Type Counts per Global Clock: Region X4Y13
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                                                              |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |          77 |               0 |   77 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4                                             |
+| g1        | 14    | BUFGCE/O        | None       |        6229 |               1 | 6033 |    164 |    2 |    0 |   0 |  0 |    0 |   1 |       0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/c0_ddr4_ui_clk |
+| g2        | 20    | BUFGCE/O        | None       |        1325 |               0 | 1217 |     78 |   21 |    0 |   3 |  0 |    0 |   0 |       0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/c0_riu_clk     |
+| g3        | 8     | BUFGCE/O        | None       |         384 |               0 |  384 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/dbg_clk        |
+| g4        | 3     | BUFGCE/O        | None       |         245 |               0 |  245 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i                                                              |
+| g6        | 4     | BUFGCE/O        | None       |          11 |               1 |   11 |      0 |    0 |    0 |   0 |  0 |    1 |   0 |       0 | sys_clk_ibufds_O_BUFGCE                                                          |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+37. Cell Type Counts per Global Clock: Region X5Y13
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        2763 |               0 | 2758 |      0 |    0 |    0 |   5 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
+| g4        | 3     | BUFGCE/O        | None       |          80 |               0 |   80 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i                  |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+38. Cell Type Counts per Global Clock: Region X3Y14
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                                                              |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |          73 |               0 |  73 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4                                             |
+| g1        | 14    | BUFGCE/O        | None       |         160 |               0 | 160 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/c0_ddr4_ui_clk |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+39. Cell Type Counts per Global Clock: Region X4Y14
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                                                              |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |           9 |               0 |    9 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4                                             |
+| g1        | 14    | BUFGCE/O        | None       |        6255 |               1 | 5865 |    350 |    0 |    0 |   0 |  0 |    0 |   1 |       0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/c0_ddr4_ui_clk |
+| g2        | 20    | BUFGCE/O        | None       |         104 |               0 |   93 |      0 |    3 |    0 |   0 |  0 |    0 |   0 |       0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/c0_riu_clk     |
+| g3        | 8     | BUFGCE/O        | None       |          17 |               0 |   17 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/dbg_clk        |
+| g4        | 3     | BUFGCE/O        | None       |           3 |               0 |    3 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i                                                              |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+40. Cell Type Counts per Global Clock: Region X5Y14
+---------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | URAM | DSP | GT | MMCM | PLL | Hard IP | Net                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+| g0        | 2     | BUFGCE/O        | None       |        1197 |               0 | 1188 |      0 |    0 |    0 |   9 |  0 |    0 |   0 |       0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
+| g4        | 3     | BUFGCE/O        | None       |          30 |               0 |   30 |      0 |    0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i                  |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+------+-----+----+------+-----+---------+--------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+41. Load Cell Placement Summary for Global Clock g0
+---------------------------------------------------
+
++-----------+-----------------+-------------------+--------------------+-------------+---------------+----------+-------------+----------+----------------+----------+--------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock              | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                  |
++-----------+-----------------+-------------------+--------------------+-------------+---------------+----------+-------------+----------+----------------+----------+--------------------------------------+
+| g0        | BUFGCE/O        | X4Y11             | clk_out4_clk_wiz_0 |      10.000 | {0.000 5.000} | X3Y9     |       57976 |        0 |              0 |        0 | vcu118_sys_clock_mmcm0/inst/clk_out4 |
++-----------+-----------------+-------------------+--------------------+-------------+---------------+----------+-------------+----------+----------------+----------+--------------------------------------+
+* Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++-----+----+-------+-------+-------+-----------+-------+
+|     | X0 | X1    | X2    | X3    | X4        | X5    |
++-----+----+-------+-------+-------+-----------+-------+
+| Y14 |  0 |     0 |     0 |    73 |         9 |  1197 |
+| Y13 |  0 |     0 |  1259 |  2243 |        77 |  2763 |
+| Y12 |  0 |   770 |  4325 |  2088 |       877 |  4448 |
+| Y11 |  0 |  2277 |  6425 |  2797 |  (D) 4154 |  6139 |
+| Y10 |  0 |   971 |  3611 |  3130 |      4587 |  3752 |
+| Y9  |  0 |     0 |     0 | (R) 0 |         0 |     0 |
+| Y8  |  0 |     0 |     0 |     0 |         2 |     0 |
+| Y7  |  0 |     0 |     0 |     0 |         1 |     0 |
+| Y6  |  0 |     0 |     0 |     0 |         0 |     0 |
+| Y5  |  0 |     0 |     0 |     0 |         1 |     0 |
+| Y4  |  0 |     0 |     0 |     0 |         0 |     0 |
+| Y3  |  0 |     0 |     0 |     0 |         0 |     0 |
+| Y2  |  0 |     0 |     0 |     0 |         0 |     0 |
+| Y1  |  0 |     0 |     0 |     0 |         0 |     0 |
+| Y0  |  0 |     0 |     0 |     0 |         0 |     0 |
++-----+----+-------+-------+-------+-----------+-------+
+
+
+42. Load Cell Placement Summary for Global Clock g1
+---------------------------------------------------
+
++-----------+-----------------+-------------------+--------------+-------------+---------------+----------+-------------+----------+----------------+----------+----------------------------------------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock        | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                                              |
++-----------+-----------------+-------------------+--------------+-------------+---------------+----------+-------------+----------+----------------+----------+----------------------------------------------------------------------------------+
+| g1        | BUFGCE/O        | X4Y13             | mmcm_clkout0 |       5.000 | {0.000 2.500} | X4Y13    |       20498 |        0 |              3 |        0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/c0_ddr4_ui_clk |
++-----------+-----------------+-------------------+--------------+-------------+---------------+----------+-------------+----------+----------------+----------+----------------------------------------------------------------------------------+
+* Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++-----+----+----+----+------+--------------+----+
+|     | X0 | X1 | X2 | X3   | X4           | X5 |
++-----+----+----+----+------+--------------+----+
+| Y14 |  0 |  0 |  0 |  160 |         6256 |  0 |
+| Y13 |  0 |  0 |  0 |  226 | (R) (D) 6230 |  0 |
+| Y12 |  0 |  0 |  0 |  106 |         7504 |  0 |
+| Y11 |  0 |  0 |  0 |    3 |           16 |  0 |
+| Y10 |  0 |  0 |  0 |    0 |            0 |  0 |
+| Y9  |  0 |  0 |  0 |    0 |            0 |  0 |
+| Y8  |  0 |  0 |  0 |    0 |            0 |  0 |
+| Y7  |  0 |  0 |  0 |    0 |            0 |  0 |
+| Y6  |  0 |  0 |  0 |    0 |            0 |  0 |
+| Y5  |  0 |  0 |  0 |    0 |            0 |  0 |
+| Y4  |  0 |  0 |  0 |    0 |            0 |  0 |
+| Y3  |  0 |  0 |  0 |    0 |            0 |  0 |
+| Y2  |  0 |  0 |  0 |    0 |            0 |  0 |
+| Y1  |  0 |  0 |  0 |    0 |            0 |  0 |
+| Y0  |  0 |  0 |  0 |    0 |            0 |  0 |
++-----+----+----+----+------+--------------+----+
+
+
+43. Load Cell Placement Summary for Global Clock g2
+---------------------------------------------------
+
++-----------+-----------------+-------------------+--------------+-------------+---------------+----------+-------------+----------+----------------+----------+------------------------------------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock        | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                                          |
++-----------+-----------------+-------------------+--------------+-------------+---------------+----------+-------------+----------+----------------+----------+------------------------------------------------------------------------------+
+| g2        | BUFGCE/O        | X4Y13             | mmcm_clkout6 |      10.000 | {0.000 5.000} | X4Y13    |        1534 |        0 |              0 |        0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/c0_riu_clk |
++-----------+-----------------+-------------------+--------------+-------------+---------------+----------+-------------+----------+----------------+----------+------------------------------------------------------------------------------+
+* Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++-----+----+----+----+----+--------------+----+
+|     | X0 | X1 | X2 | X3 | X4           | X5 |
++-----+----+----+----+----+--------------+----+
+| Y14 |  0 |  0 |  0 |  0 |          104 |  0 |
+| Y13 |  0 |  0 |  0 |  0 | (R) (D) 1325 |  0 |
+| Y12 |  0 |  0 |  0 |  0 |          105 |  0 |
+| Y11 |  0 |  0 |  0 |  0 |            0 |  0 |
+| Y10 |  0 |  0 |  0 |  0 |            0 |  0 |
+| Y9  |  0 |  0 |  0 |  0 |            0 |  0 |
+| Y8  |  0 |  0 |  0 |  0 |            0 |  0 |
+| Y7  |  0 |  0 |  0 |  0 |            0 |  0 |
+| Y6  |  0 |  0 |  0 |  0 |            0 |  0 |
+| Y5  |  0 |  0 |  0 |  0 |            0 |  0 |
+| Y4  |  0 |  0 |  0 |  0 |            0 |  0 |
+| Y3  |  0 |  0 |  0 |  0 |            0 |  0 |
+| Y2  |  0 |  0 |  0 |  0 |            0 |  0 |
+| Y1  |  0 |  0 |  0 |  0 |            0 |  0 |
+| Y0  |  0 |  0 |  0 |  0 |            0 |  0 |
++-----+----+----+----+----+--------------+----+
+
+
+44. Load Cell Placement Summary for Global Clock g3
+---------------------------------------------------
+
++-----------+-----------------+-------------------+--------------+-------------+----------------+----------+-------------+----------+----------------+----------+---------------------------------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock        | Period (ns) | Waveform (ns)  | Root (R) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                                       |
++-----------+-----------------+-------------------+--------------+-------------+----------------+----------+-------------+----------+----------------+----------+---------------------------------------------------------------------------+
+| g3        | BUFGCE/O        | X4Y13             | mmcm_clkout5 |      20.000 | {0.000 10.000} | X4Y13    |         401 |        0 |              0 |        0 | dut_/xilinxvcu118mig_1/island/blackbox/inst/u_ddr4_infrastructure/dbg_clk |
++-----------+-----------------+-------------------+--------------+-------------+----------------+----------+-------------+----------+----------------+----------+---------------------------------------------------------------------------+
+* Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++-----+----+----+----+----+-------------+----+
+|     | X0 | X1 | X2 | X3 | X4          | X5 |
++-----+----+----+----+----+-------------+----+
+| Y14 |  0 |  0 |  0 |  0 |          17 |  0 |
+| Y13 |  0 |  0 |  0 |  0 | (R) (D) 384 |  0 |
+| Y12 |  0 |  0 |  0 |  0 |           0 |  0 |
+| Y11 |  0 |  0 |  0 |  0 |           0 |  0 |
+| Y10 |  0 |  0 |  0 |  0 |           0 |  0 |
+| Y9  |  0 |  0 |  0 |  0 |           0 |  0 |
+| Y8  |  0 |  0 |  0 |  0 |           0 |  0 |
+| Y7  |  0 |  0 |  0 |  0 |           0 |  0 |
+| Y6  |  0 |  0 |  0 |  0 |           0 |  0 |
+| Y5  |  0 |  0 |  0 |  0 |           0 |  0 |
+| Y4  |  0 |  0 |  0 |  0 |           0 |  0 |
+| Y3  |  0 |  0 |  0 |  0 |           0 |  0 |
+| Y2  |  0 |  0 |  0 |  0 |           0 |  0 |
+| Y1  |  0 |  0 |  0 |  0 |           0 |  0 |
+| Y0  |  0 |  0 |  0 |  0 |           0 |  0 |
++-----+----+----+----+----+-------------+----+
+
+
+45. Load Cell Placement Summary for Global Clock g4
+---------------------------------------------------
+
++-----------+-----------------+-------------------+----------------------------------------------------------------------------------+-------------+----------------+----------+-------------+----------+----------------+----------+---------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock                                                                            | Period (ns) | Waveform (ns)  | Root (R) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                 |
++-----------+-----------------+-------------------+----------------------------------------------------------------------------------+-------------+----------------+----------+-------------+----------+----------------+----------+---------------------+
+| g4        | BUFGCE/O        | X4Y6              | dbg_hub/inst/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK |      50.000 | {0.000 25.000} | X4Y13    |         358 |        0 |              0 |        0 | dbg_hub/inst/itck_i |
++-----------+-----------------+-------------------+----------------------------------------------------------------------------------+-------------+----------------+----------+-------------+----------+----------------+----------+---------------------+
+* Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++-----+----+----+----+----+---------+-----+
+|     | X0 | X1 | X2 | X3 | X4      | X5  |
++-----+----+----+----+----+---------+-----+
+| Y14 |  0 |  0 |  0 |  0 |       3 |  30 |
+| Y13 |  0 |  0 |  0 |  0 | (R) 245 |  80 |
+| Y12 |  0 |  0 |  0 |  0 |       0 |   0 |
+| Y11 |  0 |  0 |  0 |  0 |       0 |   0 |
+| Y10 |  0 |  0 |  0 |  0 |       0 |   0 |
+| Y9  |  0 |  0 |  0 |  0 |       0 |   0 |
+| Y8  |  0 |  0 |  0 |  0 |       0 |   0 |
+| Y7  |  0 |  0 |  0 |  0 |       0 |   0 |
+| Y6  |  0 |  0 |  0 |  0 |   (D) 0 |   0 |
+| Y5  |  0 |  0 |  0 |  0 |       0 |   0 |
+| Y4  |  0 |  0 |  0 |  0 |       0 |   0 |
+| Y3  |  0 |  0 |  0 |  0 |       0 |   0 |
+| Y2  |  0 |  0 |  0 |  0 |       0 |   0 |
+| Y1  |  0 |  0 |  0 |  0 |       0 |   0 |
+| Y0  |  0 |  0 |  0 |  0 |       0 |   0 |
++-----+----+----+----+----+---------+-----+
+
+
+46. Load Cell Placement Summary for Global Clock g5
+---------------------------------------------------
+
++-----------+-----------------+-------------------+-------+-------------+---------------+----------+-------------+----------+----------------+----------+--------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                |
++-----------+-----------------+-------------------+-------+-------------+---------------+----------+-------------+----------+----------------+----------+--------------------+
+| g5        | BUFGCE/O        | X2Y9              |       |             |               | X4Y11    |         306 |        0 |              0 |        0 | jtag_TCK_IBUF_BUFG |
++-----------+-----------------+-------------------+-------+-------------+---------------+----------+-------------+----------+----------------+----------+--------------------+
+* Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++-----+----+----+--------+----+---------+----+
+|     | X0 | X1 | X2     | X3 | X4      | X5 |
++-----+----+----+--------+----+---------+----+
+| Y14 |  0 |  0 |      0 |  0 |       0 |  0 |
+| Y13 |  0 |  0 |      0 |  0 |       0 |  0 |
+| Y12 |  0 |  0 |      0 |  0 |       0 |  0 |
+| Y11 |  0 |  0 |      0 |  0 | (R) 306 |  0 |
+| Y10 |  0 |  0 |      0 |  0 |       0 |  0 |
+| Y9  |  0 |  0 |  (D) 0 |  0 |       0 |  0 |
+| Y8  |  0 |  0 |      0 |  0 |       0 |  0 |
+| Y7  |  0 |  0 |      0 |  0 |       0 |  0 |
+| Y6  |  0 |  0 |      0 |  0 |       0 |  0 |
+| Y5  |  0 |  0 |      0 |  0 |       0 |  0 |
+| Y4  |  0 |  0 |      0 |  0 |       0 |  0 |
+| Y3  |  0 |  0 |      0 |  0 |       0 |  0 |
+| Y2  |  0 |  0 |      0 |  0 |       0 |  0 |
+| Y1  |  0 |  0 |      0 |  0 |       0 |  0 |
+| Y0  |  0 |  0 |      0 |  0 |       0 |  0 |
++-----+----+----+--------+----+---------+----+
+
+
+47. Load Cell Placement Summary for Global Clock g6
+---------------------------------------------------
+
++-----------+-----------------+-------------------+--------------+-------------+---------------+----------+-------------+----------+----------------+----------+-------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock        | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                     |
++-----------+-----------------+-------------------+--------------+-------------+---------------+----------+-------------+----------+----------------+----------+-------------------------+
+| g6        | BUFGCE/O        | X4Y12             | sys_diff_clk |       4.000 | {0.000 2.000} | X4Y12    |          17 |        0 |              3 |        0 | sys_clk_ibufds_O_BUFGCE |
++-----------+-----------------+-------------------+--------------+-------------+---------------+----------+-------------+----------+----------------+----------+-------------------------+
+* Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++-----+----+----+----+----+-----------+----+
+|     | X0 | X1 | X2 | X3 | X4        | X5 |
++-----+----+----+----+----+-----------+----+
+| Y14 |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y13 |  0 |  0 |  0 |  0 |        12 |  0 |
+| Y12 |  0 |  0 |  0 |  0 | (R) (D) 7 |  0 |
+| Y11 |  0 |  0 |  0 |  0 |         1 |  0 |
+| Y10 |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y9  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y8  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y7  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y6  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y5  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y4  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y3  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y2  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y1  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y0  |  0 |  0 |  0 |  0 |         0 |  0 |
++-----+----+----+----+----+-----------+----+
+
+
+48. Load Cell Placement Summary for Global Clock g7
+---------------------------------------------------
+
++-----------+-----------------+-------------------+--------------------+-------------+---------------+----------+-------------+----------+----------------+----------+----------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock              | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                |
++-----------+-----------------+-------------------+--------------------+-------------+---------------+----------+-------------+----------+----------------+----------+----------------------------------------------------+
+| g7        | BUFGCE/O        | X4Y11             | clkfbout_clk_wiz_0 |      10.000 | {0.000 5.000} | X4Y11    |           0 |        0 |              1 |        0 | vcu118_sys_clock_mmcm0/inst/clkfbout_buf_clk_wiz_0 |
++-----------+-----------------+-------------------+--------------------+-------------+---------------+----------+-------------+----------+----------------+----------+----------------------------------------------------+
+* Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++-----+----+----+----+----+-----------+----+
+|     | X0 | X1 | X2 | X3 | X4        | X5 |
++-----+----+----+----+----+-----------+----+
+| Y14 |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y13 |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y12 |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y11 |  0 |  0 |  0 |  0 | (R) (D) 1 |  0 |
+| Y10 |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y9  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y8  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y7  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y6  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y5  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y4  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y3  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y2  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y1  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y0  |  0 |  0 |  0 |  0 |         0 |  0 |
++-----+----+----+----+----+-----------+----+
+
+
+49. Load Cell Placement Summary for Global Clock g8
+---------------------------------------------------
+
++-----------+-----------------+-------------------+--------------------+-------------+---------------+----------+-------------+----------+----------------+----------+----------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock              | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                |
++-----------+-----------------+-------------------+--------------------+-------------+---------------+----------+-------------+----------+----------------+----------+----------------------------------------------------+
+| g8        | BUFGCE/O        | X4Y12             | clkfbout_clk_wiz_1 |      10.000 | {0.000 5.000} | X4Y12    |           0 |        0 |              1 |        0 | vcu118_sys_clock_mmcm1/inst/clkfbout_buf_clk_wiz_1 |
++-----------+-----------------+-------------------+--------------------+-------------+---------------+----------+-------------+----------+----------------+----------+----------------------------------------------------+
+* Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++-----+----+----+----+----+-----------+----+
+|     | X0 | X1 | X2 | X3 | X4        | X5 |
++-----+----+----+----+----+-----------+----+
+| Y14 |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y13 |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y12 |  0 |  0 |  0 |  0 | (R) (D) 1 |  0 |
+| Y11 |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y10 |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y9  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y8  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y7  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y6  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y5  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y4  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y3  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y2  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y1  |  0 |  0 |  0 |  0 |         0 |  0 |
+| Y0  |  0 |  0 |  0 |  0 |         0 |  0 |
++-----+----+----+----+----+-----------+----+
+
+

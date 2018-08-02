@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="vcu118mig_synth_1" LaunchPart="xcvu9p-flga2104-2L-e-es1" LaunchTime="1533244693">
+  <File Type="VDS-TIMING-PB" Name="vcu118mig_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="vcu118mig_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="vcu118mig.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="vcu118mig_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="vcu118mig_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="vcu118mig_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="vcu118mig.vds"/>
+  <File Type="PA-TCL" Name="vcu118mig.tcl"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/vcu118mig">
+    <File Path="$PSRCDIR/sources_1/ip/vcu118mig/vcu118mig.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="vcu118mig"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/vcu118mig">
+    <File Path="$PSRCDIR/sources_1/ip/vcu118mig/vcu118mig.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="vcu118mig"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
