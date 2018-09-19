@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="17" Path="/home/yang/vcu118/vcu118.xpr">
+<Project Version="7" Minor="17" Path="/home/liu/code/RISCV-VCU118/vcu118.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="387ea916b217493f8b4e7b95d6a0df2a"/>
@@ -143,7 +143,7 @@
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
-      <File Path="$PPRDIR/../code/freedom/fpga-shells/xilinx/vcu118/constraints/vcu118-master.xdc">
+      <File Path="$PPRDIR/vcu118-master.xdc">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -253,9 +253,7 @@
     </Run>
     <Run Id="vcu118mig_synth_1" Type="Ft3:Synth" SrcSet="vcu118mig" Part="xcvu9p-flga2104-2L-e-es1" ConstrsSet="vcu118mig" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/vcu118mig_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -309,9 +307,7 @@
     </Run>
     <Run Id="vcu118mig_impl_1" Type="Ft2:EntireDesign" Part="xcvu9p-flga2104-2L-e-es1" ConstrsSet="vcu118mig" Description="Default settings for Implementation." SynthRun="vcu118mig_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
